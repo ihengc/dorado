@@ -10,14 +10,15 @@ from collections import deque
 
 class Singleton(type):
 
-    def __call__(self, *args, **kwargs):
-        if not hasattr(self, '_instance'):
-            instance = super(Singleton, self).__call__(*args, **kwargs)
-            setattr(self, '_instance', instance)
-        return getattr(self, '_instance')
+    def __call__(cls, *args, **kwargs):
+        if not hasattr(cls, '_instance'):
+            instance = super(Singleton, cls).__call__(*args, **kwargs)
+            setattr(cls, '_instance', instance)
+        return getattr(cls, '_instance')
 
 
-class ObjectPool(metaclass=Singleton):
+class ObjectPool(object):
+    __metaclass__ = Singleton
 
     def __init__(self, base_class, init_function, init_size=None, lazy_create=False, base_class_args=None,
                  init_function_args=None):

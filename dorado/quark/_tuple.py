@@ -1,7 +1,7 @@
 """
 @project:   dorado
 @author:    ihc
-@description: tuple example
+@description: tuple quark
 """
 
 
