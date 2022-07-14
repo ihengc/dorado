@@ -8,3 +8,7 @@
 事件循环
 asyncio由异步I/O驱动
 """
+
+import asyncio
+
+asyncio.sleep

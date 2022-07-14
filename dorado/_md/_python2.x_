@@ -1,0 +1,12 @@
+## Python2.x列表推导问题
+Python2.x中的列表推导会导致变量泄露
+```python
+m = 'm'
+symbols = [m for m in 'ABC']
+assert m == 'C'
+```
+或
+```python
+symbols = [m for m in 'ABC']
+assert m == 'C'
+```
